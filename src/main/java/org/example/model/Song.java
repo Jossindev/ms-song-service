@@ -1,4 +1,4 @@
-package org.example.data;
+package org.example.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import lombok.Value;
 
 @Entity
 @Value
-public class Resource {
+public class Song {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
