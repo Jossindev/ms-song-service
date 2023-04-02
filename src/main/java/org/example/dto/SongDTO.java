@@ -1,25 +1,19 @@
-package org.example.model;
+package org.example.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.jackson.Jacksonized;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-@Entity
+
+@Builder
 @Getter
 @Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class Song {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+@Jacksonized
+public class SongDTO {
 
     @NotBlank(message = "Name cannot be blank")
     private String name;
