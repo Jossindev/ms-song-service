@@ -3,7 +3,6 @@ package org.example.dto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.extern.jackson.Jacksonized;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -12,7 +11,6 @@ import javax.validation.constraints.NotNull;
 @Builder
 @Getter
 @Setter
-@Jacksonized
 public class SongDTO {
 
     @NotBlank(message = "Name cannot be blank")
