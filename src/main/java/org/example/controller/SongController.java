@@ -1,6 +1,8 @@
 package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 import org.example.dto.DeletedIdsResponse;
 import org.example.dto.SongDTO;
 import org.example.dto.mapper.SongMapper;
@@ -19,6 +21,7 @@ import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/songs")
+@Slf4j
 @RequiredArgsConstructor
 public class SongController {
 
@@ -27,6 +30,7 @@ public class SongController {
 
     @PostMapping
     public ResponseEntity<?> createSong(@Valid @RequestBody SongDTO songDTO, BindingResult bindingResult) {
+        log.info("Incoming song with resourceId: {}", songDTO.getResourceId());
         if (bindingResult.hasErrors()) {
             List<String> errors = bindingResult.getFieldErrors().stream()
                     .map(FieldError::getDefaultMessage)
@@ -44,7 +48,7 @@ public class SongController {
     }
 
     @DeleteMapping
-    public ResponseEntity<DeletedIdsResponse> getResource(@RequestParam("id") @Size(max = 200) String id) {
+    public ResponseEntity<DeletedIdsResponse> deleteSong(@RequestParam("id") @Size(max = 200) String id) {
         List<Integer> ids = Stream.of(id.split(","))
                 .map(String::trim)
                 .map(Integer::parseInt)

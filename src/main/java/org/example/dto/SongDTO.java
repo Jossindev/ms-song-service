@@ -1,6 +1,7 @@
 package org.example.dto;
 
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import javax.validation.constraints.NotNull;
 @Builder
 @Getter
 @Setter
+@EqualsAndHashCode
 public class SongDTO {
 
     @NotBlank(message = "Name cannot be blank")

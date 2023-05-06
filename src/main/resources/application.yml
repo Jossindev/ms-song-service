@@ -8,4 +8,4 @@ spring:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
 
 server:
-  port : 8081
+  port : 8082
