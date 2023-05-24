@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  ms-song-app:
+    image: ms-song
+    ports:
+      - "8082:8082"
+    networks:
+      - microservices_network
+
+networks:
+  microservices_network:
+    external: true
