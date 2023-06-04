@@ -6,6 +6,11 @@ spring:
     driverClassName: org.h2.Driver
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+  application:
+    name: song-service
 
 server:
   port : 8082
+
+eureka:
+  client.serviceUrl.defaultZone: http://localhost:8761/eureka/
